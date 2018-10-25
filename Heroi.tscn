@@ -1,0 +1,155 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Heroi.gd" type="Script" id=1]
+[ext_resource path="res://Characters/Player male/male_head.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Player male/male_body.png" type="Texture" id=3]
+[ext_resource path="res://Characters/Player male/male_leg.png" type="Texture" id=4]
+[ext_resource path="res://Characters/Player male/male_arm.png" type="Texture" id=5]
+[ext_resource path="res://transparentDark/transparentDark04.png" type="Texture" id=6]
+[ext_resource path="res://transparentDark/transparentDark03.png" type="Texture" id=7]
+[ext_resource path="res://transparentDark/transparentDark19.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31.8889, 88.9222 )
+
+[node name="Heroi" type="KinematicBody2D"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+motion/sync_to_physics = false
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "Z Index", "collision", "motion" ]
+
+[node name="Cabeca" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 0, -57 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Corpo" type="Sprite" parent="Cabeca"]
+position = Vector2( 0, 61 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Perna" type="Sprite" parent="Cabeca"]
+position = Vector2( 0, 118 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Braco" type="Sprite" parent="Cabeca"]
+position = Vector2( 9, 65 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -472.26, -252.353 )
+anchor_mode = 0
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="ControlesDeTela" type="Node2D" parent="Camera2D"]
+position = Vector2( 510.795, 289.497 )
+
+[node name="Direita" type="TextureButton" parent="Camera2D/ControlesDeTela"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -426.0
+margin_top = 217.0
+margin_right = -351.0
+margin_bottom = 278.0
+rect_scale = Vector2( 1, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+_sections_unfolded = [ "Material", "Rect", "Textures", "Visibility" ]
+
+[node name="Equerda" type="TextureButton" parent="Camera2D/ControlesDeTela"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -506.0
+margin_top = 216.0
+margin_right = -430.0
+margin_bottom = 277.0
+rect_scale = Vector2( 1, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 7 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="Salto" type="TextureButton" parent="Camera2D/ControlesDeTela"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 429.0
+margin_top = 223.0
+margin_right = 477.0
+margin_bottom = 271.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+_sections_unfolded = [ "Mouse", "Rect", "Textures" ]
+
+[connection signal="button_down" from="Camera2D/ControlesDeTela/Direita" to="." method="_on_Direita_button_down"]
+[connection signal="button_up" from="Camera2D/ControlesDeTela/Direita" to="." method="_on_Direita_button_up"]
+[connection signal="button_down" from="Camera2D/ControlesDeTela/Equerda" to="." method="_on_Equerda_button_down"]
+[connection signal="button_up" from="Camera2D/ControlesDeTela/Equerda" to="." method="_on_Equerda_button_up"]
+[connection signal="button_down" from="Camera2D/ControlesDeTela/Salto" to="." method="_on_Salto_button_down"]
