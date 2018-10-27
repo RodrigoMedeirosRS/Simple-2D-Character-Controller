@@ -14,41 +14,51 @@
 custom_solver_bias = 0.0
 extents = Vector2( 31.8889, 88.9222 )
 
-[node name="Heroi" type="KinematicBody2D"]
+[node name="Heroi" type="KinematicBody2D" index="0"]
+
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-motion/sync_to_physics = false
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "Visibility", "Z Index", "collision", "motion" ]
+Acao_Direita = "ui_right"
+Acao_Esquerda = "ui_left"
+Acao_Pulo = "ui_up"
+Velocidade_Queda = 40
+Velocidade = 500
 
-[node name="Cabeca" type="Sprite" parent="."]
-editor/display_folded = true
+[node name="Cabeca" type="Sprite" parent="." index="0"]
+
 position = Vector2( 0, -57 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Corpo" type="Sprite" parent="Cabeca"]
+[node name="Corpo" type="Sprite" parent="Cabeca" index="0"]
+
 position = Vector2( 0, 61 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Perna" type="Sprite" parent="Cabeca"]
+[node name="Perna" type="Sprite" parent="Cabeca" index="1"]
+
 position = Vector2( 0, 118 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Braco" type="Sprite" parent="Cabeca"]
+[node name="Braco" type="Sprite" parent="Cabeca" index="2"]
+
 position = Vector2( 9, 65 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
 shape = SubResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
+
 position = Vector2( -472.26, -252.353 )
 anchor_mode = 0
 rotating = false
@@ -73,10 +83,12 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="ControlesDeTela" type="Node2D" parent="Camera2D"]
+[node name="ControlesDeTela" type="Node2D" parent="Camera2D" index="0"]
+
 position = Vector2( 510.795, 289.497 )
 
-[node name="Direita" type="TextureButton" parent="Camera2D/ControlesDeTela"]
+[node name="Direita" type="TextureButton" parent="Camera2D/ControlesDeTela" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -100,7 +112,8 @@ group = null
 texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Material", "Rect", "Textures", "Visibility" ]
 
-[node name="Equerda" type="TextureButton" parent="Camera2D/ControlesDeTela"]
+[node name="Equerda" type="TextureButton" parent="Camera2D/ControlesDeTela" index="1"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -124,7 +137,8 @@ group = null
 texture_normal = ExtResource( 7 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="Salto" type="TextureButton" parent="Camera2D/ControlesDeTela"]
+[node name="Salto" type="TextureButton" parent="Camera2D/ControlesDeTela" index="2"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -149,7 +163,13 @@ texture_normal = ExtResource( 8 )
 _sections_unfolded = [ "Mouse", "Rect", "Textures" ]
 
 [connection signal="button_down" from="Camera2D/ControlesDeTela/Direita" to="." method="_on_Direita_button_down"]
+
 [connection signal="button_up" from="Camera2D/ControlesDeTela/Direita" to="." method="_on_Direita_button_up"]
+
 [connection signal="button_down" from="Camera2D/ControlesDeTela/Equerda" to="." method="_on_Equerda_button_down"]
+
 [connection signal="button_up" from="Camera2D/ControlesDeTela/Equerda" to="." method="_on_Equerda_button_up"]
+
 [connection signal="button_down" from="Camera2D/ControlesDeTela/Salto" to="." method="_on_Salto_button_down"]
+
+
