@@ -1,5 +1,7 @@
 ## Simple 2D Character Controller :v:
 
+<img src="https://raw.githubusercontent.com/RodrigoMedeirosrRS/Simple-2D-Character-Controller/master/icon.png" alt="Simple 2D Character Controller" />
+
 Este é um controlador simples de personagem para jogos 2D para Godot, seu principal objetivo é ser simples efacilamente adaptável para qualquer projeto de jogo 2D, tanto mobile quanto para PC ou Desktop. 
 
 **Compatível com:** Godot 3 e 3.1. :wink:
