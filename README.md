@@ -16,6 +16,9 @@ Este é um controlador simples de personagem para jogos 2D para Godot, seu princ
 É possível facilmente alterar os sprites e os parâmetro do jogo como peso do herói, velocidade e animações.
 
 **1. Selecione a cena do herói, ali você terá vários parâmetro configuráveis:**
+
+<img src="https://raw.githubusercontent.com/RodrigoMedeirosrRS/Simple-2D-Character-Controller/master/Other/Hero.jpg" alt="Configurable Parameters." />
+
 - *Velocidade:* velocidade de movimentação horizontal do personagem.
 - *Peso:* determina o quão pesado e o quão veloz o personagem cai.
 
@@ -29,6 +32,9 @@ Este é um controlador simples de personagem para jogos 2D para Godot, seu princ
 - *Ação Pulo:* nome do input determinado para ação de pulo.
 
 **2. Para alterar a os sprites do personagem.**
+
+<img src="https://raw.githubusercontent.com/RodrigoMedeirosrRS/Simple-2D-Character-Controller/master/Other/Hero2.jpg" alt="Character Sprites." />
+
 - Abra a cena do herói.
 - Veja que existe um **Node2D** initulado hero sprite e como filho desse nodo há um **Sprite2D** intitulado HeroSprite.
 - Você pode alterar livremente o HeroSprite, assim como seu colisor e o animation player, essas alterações não afetarão o código jogo, e funcinarão normalmente, inclusive se você adicionar mais sprites como filhos HeroSprite. Apenas se certifique que você está mudando o nome das animações na cena sprite e deixando tudo igual ao que colocou nos parâmetros indicados no item 1.
