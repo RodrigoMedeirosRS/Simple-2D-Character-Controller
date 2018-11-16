@@ -16,17 +16,17 @@ Este é um controlador simples de personagem para jogos 2D para Godot, seu princ
 É possível facilmente alterar os sprites e os parâmetro do jogo como peso do herói, velocidade e animações.
 
 **1. Selecione a cena do herói, ali você terá vários parâmetro configuráveis:**
-- Velocidade: velocidade de movimentação horizontal do personagem.
-- Peso: determina o quão pesado e o quão veloz o personagem cai.
+- *Velocidade:* velocidade de movimentação horizontal do personagem.
+- *Peso:* determina o quão pesado e o quão veloz o personagem cai.
 
-- Anim Walk: nome da animação de movimento do personagem.
-- Anim Jump: nome da animação de pulo do personagem.
-- Anim Idle: nome da animação de idle do personagem.
-- Anim Hurt: nome da animação de dano do personagem.
+- *Anim Walk:* nome da animação de movimento do personagem.
+- *Anim Jump:* nome da animação de pulo do personagem.
+- *Anim Idle:* nome da animação de idle do personagem.
+- *Anim Hurt:* nome da animação de dano do personagem.
 
-- Ação Direita: nome do input determinado para ação de movimento para direita.
-- Ação Esquerda: nome do input determinado para ação de movimento para esquerda.
-- Ação Pulo: nome do input determinado para ação de pulo.
+- *Ação Direita:* nome do input determinado para ação de movimento para direita.
+- *Ação Esquerda:* nome do input determinado para ação de movimento para esquerda.
+- *Ação Pulo:* nome do input determinado para ação de pulo.
 
 **2. Para alterar a os sprites do personagem.**
 - Abra a cena do herói.
